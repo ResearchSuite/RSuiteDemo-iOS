@@ -12,16 +12,9 @@ import ResearchSuiteTaskBuilder
 import Gloss
 import ResearchSuiteAppFramework
 
-class OnboardingViewController: ViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+class OnboardingViewController: UIViewController {
 
     @IBAction func signInTapped(_ sender: Any) {
-        
         
         //show sign in
         guard let signInActivity = AppDelegate.loadActivity(filename: "signIn"),
@@ -34,6 +27,7 @@ class OnboardingViewController: ViewController {
         
         let taskFinishedHandler: ((ORKTaskViewController, ORKTaskViewControllerFinishReason, Error?) -> ()) = { [weak self] (taskViewController, reason, error) in
             
+            //when done, tell the app delegate to go back to the correct screen
             self?.dismiss(animated: true, completion: {
                 appDelegate.showViewController(animated: true)
             })
@@ -47,8 +41,6 @@ class OnboardingViewController: ViewController {
         )
         
         self.present(tvc, animated: true, completion: nil)
-        //when done, tell the app delegate to go back to the correct screen
-        
         
     }
 }

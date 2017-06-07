@@ -22,8 +22,8 @@
 		E2D9EA171EE76DF200E5CDE5 /* demographics.json in Resources */ = {isa = PBXBuildFile; fileRef = E2D9EA111EE76DF200E5CDE5 /* demographics.json */; };
 		E2D9EA181EE76DF200E5CDE5 /* signIn.json in Resources */ = {isa = PBXBuildFile; fileRef = E2D9EA121EE76DF200E5CDE5 /* signIn.json */; };
 		E2D9EA191EE76DF200E5CDE5 /* surveys.json in Resources */ = {isa = PBXBuildFile; fileRef = E2D9EA131EE76DF200E5CDE5 /* surveys.json */; };
+		E2D9EA1B1EE850E300E5CDE5 /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9EA1A1EE850E300E5CDE5 /* ActivitiesTableViewController.swift */; };
 		E2EC78A01ED5990E0009D7D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC789F1ED5990E0009D7D4 /* AppDelegate.swift */; };
-		E2EC78A21ED5990E0009D7D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC78A11ED5990E0009D7D4 /* ViewController.swift */; };
 		E2EC78A51ED5990E0009D7D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EC78A31ED5990E0009D7D4 /* Main.storyboard */; };
 		E2EC78A71ED5990E0009D7D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2EC78A61ED5990E0009D7D4 /* Assets.xcassets */; };
 		E2EC78AA1ED5990E0009D7D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EC78A81ED5990E0009D7D4 /* LaunchScreen.storyboard */; };
@@ -59,9 +59,9 @@
 		E2D9EA111EE76DF200E5CDE5 /* demographics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = demographics.json; path = config/json/demographics.json; sourceTree = "<group>"; };
 		E2D9EA121EE76DF200E5CDE5 /* signIn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = signIn.json; path = config/json/signIn.json; sourceTree = "<group>"; };
 		E2D9EA131EE76DF200E5CDE5 /* surveys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = surveys.json; path = config/json/surveys.json; sourceTree = "<group>"; };
+		E2D9EA1A1EE850E300E5CDE5 /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		E2EC789C1ED5990E0009D7D4 /* RSuiteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSuiteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2EC789F1ED5990E0009D7D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2EC78A11ED5990E0009D7D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2EC78A41ED5990E0009D7D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2EC78A61ED5990E0009D7D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2EC78A91ED5990E0009D7D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -187,9 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				E2EC789F1ED5990E0009D7D4 /* AppDelegate.swift */,
-				E2EC78A11ED5990E0009D7D4 /* ViewController.swift */,
 				E2D9E9FF1EE75F5800E5CDE5 /* RSuiteDemoStore.swift */,
 				E2D9EA031EE7653300E5CDE5 /* OnboardingViewController.swift */,
+				E2D9EA1A1EE850E300E5CDE5 /* ActivitiesTableViewController.swift */,
 				E2D9EA0C1EE76DDA00E5CDE5 /* config */,
 				E2D9EA051EE769C100E5CDE5 /* RSRP */,
 				E2D9E9FC1EE75E9800E5CDE5 /* Storyboards */,
@@ -419,11 +419,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D9EA1B1EE850E300E5CDE5 /* ActivitiesTableViewController.swift in Sources */,
 				E2D9EA001EE75F5800E5CDE5 /* RSuiteDemoStore.swift in Sources */,
 				E2D9EA091EE769CB00E5CDE5 /* DemographicsResult.swift in Sources */,
 				E2D9EA0A1EE769CB00E5CDE5 /* DemographicsResult+OMHDatapoint.swift in Sources */,
 				E2D9EA0B1EE769CB00E5CDE5 /* DemographicsResultTransformer.swift in Sources */,
-				E2EC78A21ED5990E0009D7D4 /* ViewController.swift in Sources */,
 				E2EC78A01ED5990E0009D7D4 /* AppDelegate.swift in Sources */,
 				E2D9EA041EE7653300E5CDE5 /* OnboardingViewController.swift in Sources */,
 			);

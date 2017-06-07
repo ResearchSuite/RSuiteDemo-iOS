@@ -31,5 +31,9 @@ class RSuiteDemoStore: NSObject, OhmageOMHSDKCredentialStore, RSTBStateHelper, O
     func getOhmageManager() -> OhmageOMHManager? {
         return (UIApplication.shared.delegate as? AppDelegate)?.ohmageManager
     }
+    
+    func reset() {
+        RSAFKeychainStateManager.clearKeychain()
+    }
 
 }

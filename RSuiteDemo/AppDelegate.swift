@@ -12,6 +12,7 @@ import ResearchSuiteTaskBuilder
 import ResearchSuiteResultsProcessor
 import ResearchSuiteAppFramework
 import Gloss
+import sdlrkx
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,9 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func initializeOhmage(credentialsStore: OhmageOMHSDKCredentialStore) -> OhmageOMHManager {
         
+        //load OMH client application credentials from OMHClient.plist
         guard let file = Bundle.main.path(forResource: "OMHClient", ofType: "plist") else {
                 fatalError("Could not initialze OhmageManager")
         }
+        
         
         let omhClientDetails = NSDictionary(contentsOfFile: file)
         
@@ -49,8 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -74,6 +75,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    open func signOut() {
+        
+        self.ohmageManager.signOut { (error) in
+            
+            self.store.reset()
+            DispatchQueue.main.async {
+                self.showViewController(animated: true)
+            }
+            
+        }
+    }
+    
     open func showViewController(animated: Bool) {
         //if not signed in, go to sign in screen
         if !self.ohmageManager.isSignedIn {
@@ -93,6 +106,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     open class var stepGeneratorServices: [RSTBStepGenerator] {
         return [
             CTFOhmageLoginStepGenerator(),
+            CTFDelayDiscountingStepGenerator(),
+            CTFBARTStepGenerator(),
             RSTBInstructionStepGenerator(),
             RSTBTextFieldStepGenerator(),
             RSTBIntegerStepGenerator(),
@@ -129,7 +144,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     open class var resultsTransformers: [RSRPFrontEndTransformer.Type] {
         return [
-            DemographicsResultTransformer.self
+            DemographicsResultTransformer.self,
+            CTFBARTSummaryResultsTransformer.self,
+            CTFDelayDiscountingRawResultsTransformer.self
         ]
     }
     

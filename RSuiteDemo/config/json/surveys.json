@@ -45,7 +45,7 @@
       },
       "resultTransforms": [
         {
-          "transform": "GoNoGoSummary",
+          "transform": "BARTSummary",
           "inputMapping": [
             {"stepIdentifier":"bart_250_dollars_active_task", "parameter":"BARTResult"}
           ]

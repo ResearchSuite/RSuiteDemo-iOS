@@ -31,7 +31,7 @@ extension DemographicsResult: OMHDataPointBuilder {
     }
     
     open var schema: OMHSchema {
-        return OMHSchema(name: "SampleDemographics", version: "1.0", namespace: "Cornell")
+        return OMHSchema(name: "DemoDemographics", version: "1.0", namespace: "Cornell")
     }
     
     open var body: [String: Any] {
