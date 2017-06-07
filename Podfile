@@ -14,7 +14,7 @@ target 'RSuiteDemo' do
   pod "ResearchKit", '~> 1.3'
   pod "ResearchSuiteTaskBuilder"
   pod "ResearchSuiteResultsProcessor"
-  pod "ResearchSuiteAppFramework", :path => '~/Developer/Foundry/ResearchSuite/ios/ResearchSuiteAppFramework'
+  pod "ResearchSuiteAppFramework"
 
   target 'RSuiteDemoTests' do
     inherit! :search_paths
