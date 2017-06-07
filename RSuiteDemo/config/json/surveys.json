@@ -1,0 +1,56 @@
+{
+  "type": "surveys",
+  "identifier": "HTechSurveys",
+  "title": "Surveys",
+  "guid": "impusivity-activities-123",
+  "items": [
+    {
+      "type": "recurring",
+      "identifier": "Baseline",
+      "title": "Baseline",
+      "guid": "Baseline",
+      "activity": {
+        "type": "elementFile",
+        "identifier": "baseline",
+        "elementFileName": "baseline"
+      },
+      "resultTransforms": [
+        {
+          "transform": "Demographics",
+          "inputMapping": [
+            {"stepIdentifier":"gender", "parameter":"GenderChoiceResult"},
+            {"stepIdentifier":"age", "parameter":"AgeIntegerResult"},
+            {"stepIdentifier":"zip_code", "parameter":"ZipTextResult"},
+            {"stepIdentifier":"education", "parameter":"EducationChoiceResult"},
+            {"stepIdentifier":"employment_income", "parameter":"EmploymentChoiceResult"}
+          ]
+        },
+        {
+          "transform": "DelayDiscountingRaw",
+          "inputMapping": [
+            {"stepIdentifier":"dd_money_1_month", "parameter":"DelayDiscountingResult"}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "recurring",
+      "identifier": "bart250",
+      "title": "BART $250",
+      "guid": "bart250-1",
+      "activity": {
+        "type": "elementFile",
+        "identifier": "bart_250_dollars_short_task",
+        "elementFileName": "bart_250_dollars_short_task"
+      },
+      "resultTransforms": [
+        {
+          "transform": "GoNoGoSummary",
+          "inputMapping": [
+            {"stepIdentifier":"bart_250_dollars_active_task", "parameter":"BARTResult"}
+          ]
+        }
+      ]
+    },
+  ]
+}
