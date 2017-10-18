@@ -119,7 +119,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             RSTBMultipleChoiceStepGenerator(),
             RSTBBooleanStepGenerator(),
             RSTBPasscodeStepGenerator(),
-            RSTBScaleStepGenerator()
+            RSTBScaleStepGenerator(),
+            YADLFullStepGenerator(),
+            YADLSpotStepGenerator()
         ]
     }
     
@@ -146,7 +148,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return [
             DemographicsResultTransformer.self,
             CTFBARTSummaryResultsTransformer.self,
-            CTFDelayDiscountingRawResultsTransformer.self
+            CTFDelayDiscountingRawResultsTransformer.self,
+            YADLSpotRaw.self,
+            YADLFullRaw.self
         ]
     }
     

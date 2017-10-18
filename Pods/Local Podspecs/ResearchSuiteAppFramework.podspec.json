@@ -1,6 +1,6 @@
 {
   "name": "ResearchSuiteAppFramework",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "summary": "The ResearchSuiteAppFramework is the easiest way to build mobile health research studies.",
   "description": "The ResearchSuiteAppFramework is the easiest way to build mobile health research studies.\nNOTE: VERY EXPERIMENTAL!!",
   "homepage": "https://github.com/ResearchSuite/ResearchSuiteAppFramework-iOS",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ResearchSuite/ResearchSuiteAppFramework-iOS",
-    "tag": "0.0.1"
+    "tag": "0.0.3"
   },
   "platforms": {
     "ios": "9.0"

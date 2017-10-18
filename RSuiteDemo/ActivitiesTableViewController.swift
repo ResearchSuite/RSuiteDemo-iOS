@@ -75,6 +75,13 @@ class ActivitiesTableViewController: UITableViewController {
                 appDelegate.resultsProcessor.processResult(taskResult: taskResult, resultTransforms: item.resultTransforms)
             }
             
+            if let task = taskViewController.task,
+                task.identifier == "yadl_full" {
+                
+                self?.processYADLResult(taskResult: taskViewController.result)
+                
+            }
+            
             self?.dismiss(animated: true, completion: nil)
         }
         
@@ -85,6 +92,45 @@ class ActivitiesTableViewController: UITableViewController {
         )
         
         self.present(tvc, animated: true, completion: nil)
+        
+    }
+    
+    func processYADLResult(taskResult: ORKTaskResult) {
+        
+        print(taskResult)
+        
+        if let stepResults = taskResult.results as? [ORKStepResult] {
+            print(stepResults.count)
+            let identifierPredicate = NSPredicate(format: "identifier BEGINSWITH %@", "yadl_full.")
+            let filteredStepResults = (stepResults as NSArray).filtered(using: identifierPredicate) as! [ORKStepResult]
+            
+            print(filteredStepResults.count)
+            filteredStepResults.forEach({ (stepResult) in
+                print(stepResult)
+            })
+            
+            let identifierSelector = NSExpression(forKeyPath: "identifier")
+            let valueSelector = NSExpression(forKeyPath: "result.answer")
+            
+            let mappedResults = filteredStepResults.flatMap({ (stepResult) -> (String, String)? in
+                guard let identifier = identifierSelector.expressionValue(with: stepResult, context: nil) as? String,
+                    let value = valueSelector.expressionValue(with: stepResult, context: nil) as? String else {
+                        return nil
+                }
+                return (identifier, value)
+            })
+            
+            // hi there this is me typing really fast
+            
+            print(mappedResults)
+            print(filteredStepResults.count)
+            mappedResults.forEach({ (result) in
+                print(result)
+            })
+            
+            
+        }
+        
         
     }
 

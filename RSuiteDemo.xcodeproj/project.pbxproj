@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01CAE54F729224C4F624869B /* Pods_RSuiteDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0826E23060965CEEC67D399 /* Pods_RSuiteDemo.framework */; };
 		D489CE69A647CA740CB239C4 /* Pods_RSuiteDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139BA031CB91AFB8133BA7CC /* Pods_RSuiteDemoTests.framework */; };
+		E2CA164A1EEE08EB000E26A3 /* YADL.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CA16491EEE08EB000E26A3 /* YADL.xcassets */; };
 		E2D9E9FE1EE75EB800E5CDE5 /* OMHClient.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D9E9FD1EE75EB800E5CDE5 /* OMHClient.plist */; };
 		E2D9EA001EE75F5800E5CDE5 /* RSuiteDemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D9E9FF1EE75F5800E5CDE5 /* RSuiteDemoStore.swift */; };
 		E2D9EA021EE7619800E5CDE5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D9EA011EE7619800E5CDE5 /* Onboarding.storyboard */; };
@@ -46,6 +47,7 @@
 		B9552404EE923CB24582F3B3 /* Pods-RSuiteDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSuiteDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSuiteDemoTests/Pods-RSuiteDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D0826E23060965CEEC67D399 /* Pods_RSuiteDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSuiteDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA44DC37A8ABF6C5A91FBF7 /* Pods-RSuiteDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSuiteDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSuiteDemo/Pods-RSuiteDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E2CA16491EEE08EB000E26A3 /* YADL.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = YADL.xcassets; path = config/images/YADL.xcassets; sourceTree = "<group>"; };
 		E2D9E9FD1EE75EB800E5CDE5 /* OMHClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OMHClient.plist; sourceTree = "<group>"; };
 		E2D9E9FF1EE75F5800E5CDE5 /* RSuiteDemoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSuiteDemoStore.swift; sourceTree = "<group>"; };
 		E2D9EA011EE7619800E5CDE5 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E2CA16481EEE08D3000E26A3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E2CA16491EEE08EB000E26A3 /* YADL.xcassets */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		E2D9E9FB1EE75E8400E5CDE5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		E2D9EA0C1EE76DDA00E5CDE5 /* config */ = {
 			isa = PBXGroup;
 			children = (
+				E2CA16481EEE08D3000E26A3 /* images */,
 				E2D9EA0D1EE76DE900E5CDE5 /* json */,
 			);
 			name = config;
@@ -309,6 +320,7 @@
 				E2D9EA151EE76DF200E5CDE5 /* baseline.json in Resources */,
 				E2EC78A71ED5990E0009D7D4 /* Assets.xcassets in Resources */,
 				E2EC78A51ED5990E0009D7D4 /* Main.storyboard in Resources */,
+				E2CA164A1EEE08EB000E26A3 /* YADL.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,13 +370,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSuiteDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B2D2D96AFF624B4DC8E1AA4E /* [CP] Copy Pods Resources */ = {
@@ -388,13 +403,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSuiteDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8ADDB95137B50D54E991AFB /* [CP] Embed Pods Frameworks */ = {
@@ -403,9 +421,38 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RSuiteDemo/Pods-RSuiteDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/OMHClient/OMHClient.framework",
+				"${BUILT_PRODUCTS_DIR}/OhmageOMHSDK/OhmageOMHSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ResearchKit/ResearchKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ResearchSuiteAppFramework/ResearchSuiteAppFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/ResearchSuiteExtensions/ResearchSuiteExtensions.framework",
+				"${BUILT_PRODUCTS_DIR}/ResearchSuiteResultsProcessor/ResearchSuiteResultsProcessor.framework",
+				"${BUILT_PRODUCTS_DIR}/ResearchSuiteTaskBuilder/ResearchSuiteTaskBuilder.framework",
+				"${BUILT_PRODUCTS_DIR}/SecureQueue/SecureQueue.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyMarkdown/SwiftyMarkdown.framework",
+				"${BUILT_PRODUCTS_DIR}/sdlrkx/sdlrkx.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mustache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMHClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OhmageOMHSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResearchKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResearchSuiteAppFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResearchSuiteExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResearchSuiteResultsProcessor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResearchSuiteTaskBuilder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SecureQueue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyMarkdown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sdlrkx.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
